@@ -1,0 +1,8 @@
+C:\CoreMVC\Palkkasovellus.Entity\obj\Debug\netcoreapp3.1\Palkkasovellus.Entity.AssemblyInfoInputs.cache
+C:\CoreMVC\Palkkasovellus.Entity\obj\Debug\netcoreapp3.1\Palkkasovellus.Entity.AssemblyInfo.cs
+C:\CoreMVC\Palkkasovellus.Entity\bin\Debug\netcoreapp3.1\Palkkasovellus.Entity.deps.json
+C:\CoreMVC\Palkkasovellus.Entity\bin\Debug\netcoreapp3.1\Palkkasovellus.Entity.dll
+C:\CoreMVC\Palkkasovellus.Entity\bin\Debug\netcoreapp3.1\Palkkasovellus.Entity.pdb
+C:\CoreMVC\Palkkasovellus.Entity\obj\Debug\netcoreapp3.1\Palkkasovellus.Entity.dll
+C:\CoreMVC\Palkkasovellus.Entity\obj\Debug\netcoreapp3.1\Palkkasovellus.Entity.pdb
+C:\CoreMVC\Palkkasovellus.Entity\obj\Debug\netcoreapp3.1\Palkkasovellus.Entity.csprojAssemblyReference.cache

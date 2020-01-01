@@ -1,0 +1,13 @@
+C:\CoreMVC\Palkkasovellus.Persistence\bin\Debug\netcoreapp3.1\Palkkasovellus.Persistence.deps.json
+C:\CoreMVC\Palkkasovellus.Persistence\bin\Debug\netcoreapp3.1\Palkkasovellus.Persistence.dll
+C:\CoreMVC\Palkkasovellus.Persistence\bin\Debug\netcoreapp3.1\Palkkasovellus.Persistence.pdb
+C:\CoreMVC\Palkkasovellus.Persistence\obj\Debug\netcoreapp3.1\Palkkasovellus.Persistence.csprojAssemblyReference.cache
+C:\CoreMVC\Palkkasovellus.Persistence\obj\Debug\netcoreapp3.1\Palkkasovellus.Persistence.AssemblyInfoInputs.cache
+C:\CoreMVC\Palkkasovellus.Persistence\obj\Debug\netcoreapp3.1\Palkkasovellus.Persistence.AssemblyInfo.cs
+C:\CoreMVC\Palkkasovellus.Persistence\obj\Debug\netcoreapp3.1\Palkkasovellus.Persistence.dll
+C:\CoreMVC\Palkkasovellus.Persistence\obj\Debug\netcoreapp3.1\Palkkasovellus.Persistence.pdb
+C:\CoreMVC\Palkkasovellus.Persistence\bin\Debug\netcoreapp3.1\Palkkasovellus.Entity.dll
+C:\CoreMVC\Palkkasovellus.Persistence\bin\Debug\netcoreapp3.1\Palkkasovellus.Entity.pdb
+C:\CoreMVC\Palkkasovellus.Persistence\obj\Debug\netcoreapp3.1\Palkkasovellus.Persistence.csproj.CopyComplete
+C:\CoreMVC\Palkkasovellus.Persistence\bin\Debug\netcoreapp3.1\Palkkasovellus.Persistence.runtimeconfig.json
+C:\CoreMVC\Palkkasovellus.Persistence\bin\Debug\netcoreapp3.1\Palkkasovellus.Persistence.runtimeconfig.dev.json

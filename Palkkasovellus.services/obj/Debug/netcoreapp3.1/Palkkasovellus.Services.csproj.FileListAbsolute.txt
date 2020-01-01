@@ -1,0 +1,13 @@
+C:\CoreMVC\Palkkasovellus.services\bin\Debug\netcoreapp3.1\Palkkasovellus.Services.deps.json
+C:\CoreMVC\Palkkasovellus.services\bin\Debug\netcoreapp3.1\Palkkasovellus.Services.dll
+C:\CoreMVC\Palkkasovellus.services\bin\Debug\netcoreapp3.1\Palkkasovellus.Services.pdb
+C:\CoreMVC\Palkkasovellus.services\obj\Debug\netcoreapp3.1\Palkkasovellus.Services.csprojAssemblyReference.cache
+C:\CoreMVC\Palkkasovellus.services\obj\Debug\netcoreapp3.1\Palkkasovellus.Services.AssemblyInfoInputs.cache
+C:\CoreMVC\Palkkasovellus.services\obj\Debug\netcoreapp3.1\Palkkasovellus.Services.AssemblyInfo.cs
+C:\CoreMVC\Palkkasovellus.services\obj\Debug\netcoreapp3.1\Palkkasovellus.Services.dll
+C:\CoreMVC\Palkkasovellus.services\obj\Debug\netcoreapp3.1\Palkkasovellus.Services.pdb
+C:\CoreMVC\Palkkasovellus.services\bin\Debug\netcoreapp3.1\Palkkasovellus.Entity.dll
+C:\CoreMVC\Palkkasovellus.services\bin\Debug\netcoreapp3.1\Palkkasovellus.Persistence.dll
+C:\CoreMVC\Palkkasovellus.services\bin\Debug\netcoreapp3.1\Palkkasovellus.Entity.pdb
+C:\CoreMVC\Palkkasovellus.services\bin\Debug\netcoreapp3.1\Palkkasovellus.Persistence.pdb
+C:\CoreMVC\Palkkasovellus.services\obj\Debug\netcoreapp3.1\Palkkasovellus.Services.csproj.CopyComplete
