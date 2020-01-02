@@ -31,5 +31,9 @@ namespace Palkkasovellus.Controllers
             }).ToList();
             return View(henkilot);
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
