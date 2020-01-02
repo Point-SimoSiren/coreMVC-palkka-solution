@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Palkkasovellus.Services
 {
-    interface IHenkiloService
+    public interface IHenkiloService
     {
         Task CreateAsync(Henkilo newHenkilo);
         Henkilo GetById(int henkiloId);

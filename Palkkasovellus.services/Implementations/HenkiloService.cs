@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Palkkasovellus.Services.Implementations
 {
-    class HenkiloService : IHenkiloService
+    public class HenkiloService : IHenkiloService
     {
         private readonly ApplicationDbContext _context;
         public HenkiloService(ApplicationDbContext context)
