@@ -37,6 +37,8 @@ namespace Palkkasovellus.Controllers
             return View(henkilot);
         }
 
+        //________________CREATE___________________________
+
         [HttpGet]
         public IActionResult Create()
         {
@@ -91,6 +93,8 @@ namespace Palkkasovellus.Controllers
             }
             return View();
         }
+
+        //______________EDIT_______________________________
 
         //get on oletuksena. Tehtävä on hakea tämä ja välittää view modelille alempana (post)
         public IActionResult Edit(int id)
@@ -165,6 +169,64 @@ namespace Palkkasovellus.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View();
+        }
+        
+        //_________________DETAIL______________________
+
+        [HttpGet]
+        public IActionResult Detail(int id)
+        {
+            var henkilo = _henkiloService.GetById(id);
+            if (henkilo == null)
+            {
+                return NotFound();
+            }
+            HenkiloDetailViewModel model = new HenkiloDetailViewModel()
+            {
+                Id = henkilo.Id,
+                HenkiloNro = henkilo.HenkiloNro,
+                Kokonimi = henkilo.Kokonimi,
+                Sukupuoli = henkilo.Sukupuoli,
+                SyntymaAika = henkilo.SyntymaAika,
+                AloitusPvm = henkilo.AloitusPvm,
+                Tehtava = henkilo.Tehtava,
+                SosTurvaTunnus = henkilo.SosTurvaTunnus,
+                Puhelin = henkilo.Puhelin,
+                Sahkoposti = henkilo.Sahkoposti,
+                Maksutapa = henkilo.Maksutapa,
+                LiitonJasen = henkilo.LiitonJasen,
+                Osoite = henkilo.Osoite,
+                Kaupunki = henkilo.Kaupunki,
+                Postinro = henkilo.Postinro,
+                KuvaUrl = henkilo.KuvaUrl
+            };
+
+            return View(model);
+        }
+        //___________DELETE________________________________
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var henkilo = _henkiloService.GetById(id);
+            if (henkilo == null)
+            {
+                return NotFound();
+            }
+            var model = new HenkiloDeleteViewModel()
+            {
+                Id = henkilo.Id,
+                Kokonimi = henkilo.Kokonimi
+            };
+            return View(model); // view model välitetään näkymälle
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(HenkiloDeleteViewModel model)
+        {
+            await _henkiloService.Delete(model.Id);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
