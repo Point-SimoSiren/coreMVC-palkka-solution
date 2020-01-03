@@ -23,6 +23,7 @@ namespace Palkkasovellus.Entity
         public DateTime AloitusPvm { get; set; }
         public string Tehtava { get; set; }
         public string Sahkoposti { get; set; }
+        public string Puhelin { get; set; }
         [Required, MaxLength(50)]
         public string SosTurvaTunnus { get; set; }
         public Maksutapa Maksutapa { get; set; }
