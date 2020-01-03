@@ -5,4 +5,3 @@ C:\CoreMVC\Palkkasovellus.Entity\bin\Debug\netcoreapp3.1\Palkkasovellus.Entity.d
 C:\CoreMVC\Palkkasovellus.Entity\bin\Debug\netcoreapp3.1\Palkkasovellus.Entity.pdb
 C:\CoreMVC\Palkkasovellus.Entity\obj\Debug\netcoreapp3.1\Palkkasovellus.Entity.dll
 C:\CoreMVC\Palkkasovellus.Entity\obj\Debug\netcoreapp3.1\Palkkasovellus.Entity.pdb
-C:\CoreMVC\Palkkasovellus.Entity\obj\Debug\netcoreapp3.1\Palkkasovellus.Entity.csprojAssemblyReference.cache

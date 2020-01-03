@@ -2,7 +2,6 @@
 using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting.Internal;
 using Palkkasovellus.Entity;
 using Palkkasovellus.Models;
@@ -13,7 +12,8 @@ namespace Palkkasovellus.Controllers
 {
     public class HenkiloController : Controller
     {
-        private readonly IHenkiloService _henkiloService;
+        //Injektoidaan IHenkilo service tähän henkilo kontrolleriin.
+        private readonly IHenkiloService _henkiloService; //Interface
         private readonly HostingEnvironment _hostingEnvironment;
         public HenkiloController(IHenkiloService henkiloService, HostingEnvironment hostingEnvironment)
         {

@@ -12,6 +12,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Palkkasovellus.Persistence;
+using Palkkasovellus.Services;
+using Palkkasovellus.Services.Implementations;
+
+// Riveillä on tietoa servicejen lisäämisestä ja injektoinnista (kts. esim. myös kontrollereista)
 
 namespace Palkkasovellus
 {
@@ -24,7 +28,10 @@ namespace Palkkasovellus
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        //_______Palvelujen kontaineri________________________________
+
+        //Tähän kontaineriin laittamalla servicet ovat omien dependency injectioneidemme saatavilla.
+        // This method gets called by the runtime.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<Persistence.ApplicationDbContext>(options =>
@@ -34,6 +41,10 @@ namespace Palkkasovellus
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            // Itse lisätty: 1. on Palkkasovellus.Servicestä,
+            // 2. -,,-.Implementations:ta, jotka on tarkoituksella eristetty eri nimiavaruuksiin.
+            services.AddScoped<IHenkiloService, HenkiloService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
