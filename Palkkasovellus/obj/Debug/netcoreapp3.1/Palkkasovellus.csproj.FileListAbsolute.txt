@@ -69,3 +69,5 @@ C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\Palkkasovellus.Services.dll
 C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\Palkkasovellus.Entity.pdb
 C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\Palkkasovellus.Services.pdb
 C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\Palkkasovellus.Persistence.pdb
+C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Razor\Views\Henkilo\Index.cshtml.g.cs
+C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Razor\Views\Henkilo\Create.cshtml.g.cs

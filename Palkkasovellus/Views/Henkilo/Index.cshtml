@@ -1,0 +1,72 @@
+﻿@model IEnumerable<HenkiloIndexViewModel>
+<!-- Ei tarvitse koko malli luokan polkua kun on viewImports tiedostossa
+    viittaus ko nimiavaruuksiin-->
+
+@{ ViewBag.Title = "Henkilöt | Palkkasovellus";}
+
+<div class="row">
+    <div class="col-md-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Etusivu</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Henkilöt</li>
+                    </ol>
+                </nav><br /><br />
+                    <div class="row">
+                        <div class="col-md-12 table-responsive-md">
+                         <a class="btn btn-xs btn-outline-success float-md-right" asp-action="Create"> Lisää uusi henkilö</a>
+
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Henkilönumero</th>
+                                        <th>Kuva</th>
+                                        <th>Nimi</th>
+                                        <th>Sukupuoli</th>
+                                        <th>Työtehtävä</th>
+                                        <th>Kaupunki</th>
+                                        <th>Työsuhteen alkupvm</th>
+                                        <th class="text-warning">Toiminnnot</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <!-- Henkilönumero on a tagin sisällä linkkinä detaaleihin -->
+                                            <a asp-action="Detail" asp-route-id="@item.Id">
+                                                @item.HenkiloNro
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <img alt="image" src="@Url.Content(item.KuvaUrl)" />
+                                        </td>
+                                        <td>@item.Kokonimi</td>
+                                        <td>@item.Sukupuoli</td>
+                                        <td>@item.Tehtava</td>
+                                        <td>@item.Kaupunki</td>
+                                        <td>@item.AloitusPvm.ToString("dd/MM/yyyy")</td>
+                                        <td>
+                                            <a class="text-primary" asp-action="Edit" asp-route-id="@item.Id">
+                                                <i class="fas fa-edit"></i> Muokkaa
+                                            </a>
+                                            <a class="text-success" asp-action="Detail" asp-route-id="@item.Id">
+                                                <i class="fas fa-bars"></i> Tarkastele
+                                            </a>
+                                            <a class="text-danger" asp-action="Delete" asp-route-id="@item.Id">
+                                                <i class="far fa-trash-alt"></i> Poista
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table><br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

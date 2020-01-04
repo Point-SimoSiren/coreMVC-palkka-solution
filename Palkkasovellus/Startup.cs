@@ -39,7 +39,8 @@ namespace Palkkasovellus
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddControllersWithViews();
+
+            services.AddControllersWithViews(); //MVC:ssä endpoint on view. Rest apeissa taas pelkkä controller.
             services.AddRazorPages();
 
             // Itse lisätty: 1. on Palkkasovellus.Servicestä,
