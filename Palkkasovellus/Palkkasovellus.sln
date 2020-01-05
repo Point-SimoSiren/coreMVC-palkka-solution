@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palkkasovellus", "Palkkasovellus.csproj", "{D9AA70FD-3F27-49FD-B5DF-A458D1BB90E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Palkkasovellus", "Palkkasovellus.csproj", "{D9AA70FD-3F27-49FD-B5DF-A458D1BB90E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palkkasovellus.Services", "..\Palkkasovellus.services\Palkkasovellus.Services.csproj", "{2D21C667-307D-44A5-8AD0-C20D855F2D06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Palkkasovellus.Services", "..\Palkkasovellus.services\Palkkasovellus.Services.csproj", "{2D21C667-307D-44A5-8AD0-C20D855F2D06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palkkasovellus.Persistence", "..\Palkkasovellus.Persistence\Palkkasovellus.Persistence.csproj", "{9AE807A1-618D-44C1-B332-94E34CED0A0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Palkkasovellus.Persistence", "..\Palkkasovellus.Persistence\Palkkasovellus.Persistence.csproj", "{9AE807A1-618D-44C1-B332-94E34CED0A0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palkkasovellus.Entity", "..\Palkkasovellus.Entity\Palkkasovellus.Entity.csproj", "{8CEEAE7C-933A-476A-9CC9-42809FB30BB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Palkkasovellus.Entity", "..\Palkkasovellus.Entity\Palkkasovellus.Entity.csproj", "{8CEEAE7C-933A-476A-9CC9-42809FB30BB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

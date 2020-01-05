@@ -27,9 +27,7 @@ namespace Palkkasovellus.Controllers
             {
                 Id = henkilo.Id,
                 HenkiloNro = henkilo.HenkiloNro,
-                KuvaUrl = henkilo.KuvaUrl,
                 Kokonimi = henkilo.Kokonimi,
-                Sukupuoli = henkilo.Sukupuoli,
                 Tehtava = henkilo.Tehtava,
                 Kaupunki = henkilo.Kaupunki,
                 AloitusPvm = henkilo.AloitusPvm

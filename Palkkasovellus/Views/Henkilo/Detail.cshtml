@@ -1,0 +1,43 @@
+﻿@model HenkiloDetailViewModel
+
+<div class="col-md-12 grid-margin grid-margin-md-0">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Etusivu</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">Henkilöt</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Tarkemmat henkilön tiedot</li>
+                </ol>
+            </nav><br /><br />
+            <div class="wrap d-flex justify-content-start justify-content-sm-center flex-wrap">
+                <img class="rounded-circle shadow-lg" style="width:300px; height:350px" src="@Url.Content(Model.KuvaUrl)" alt="" />
+                <div class="wrap align-items-center ml-5">
+                    <p class="font-weight-bold text-success" style="font-size:20px">@Model.Kokonimi</p>
+                    <p class="font-weight-normal"> Tehtävä: @Model.Tehtava</p>
+                    <p class="font-weight-normal"> Sukupuoli: @Model.Sukupuoli</p>
+                    <p class="font-weight-normal">Syntymäaika: @Model.SyntymaAika.ToString("dd/MM/yyyy")</p>
+                    <p class="font-weight-normal">Henkilönumero: @Model.HenkiloNro</p>
+                    <p class="font-weight-normal">Sotu: @Model.SosTurvaTunnus</p>
+                    <p class="font-weight-normal">Sähköposti: <a href="#">@Model.Sahkoposti</a></p>
+                    <p class="font-weight-normal">Puhelin: <a href="tel:@Model.Puhelin">@Model.Puhelin</a></p>
+                    <br /><br />
+                    <p class="font-weight-bold"> Maksu ja pidätykset</p>
+                    <hr style="background-color:crimson" />
+                    <p class="font-weight-normal"> Maksutapa: @Model.Maksutapa</p>
+                    <p class="font-weight-normal"> Liiton jäsen: @Model.LiitonJasen</p>
+                    <p class="font-weight-normal"><i class="fas fa-envelope" style="margin-right:0.6em; color:cornflowerblue"></i> <a href="mailto:@Model.Sahkoposti?subject=Payslip&body=Attached Ohessa palkkatositteenne.">Lähetä palkkatosite sähköpostiin</a></p>
+                    <br /><br />
+
+                    <p class="font-weight-bold"> Osoite</p>
+                    <hr style="background-color:crimson" />
+                    <p class="font-weight-normal"> @Model.Osoite</p>
+                    <p class="font-weight-normal"> @Model.Kaupunki</p>
+                    <p class="font-weight-normal"> @Model.Postinro</p>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,8 +9,6 @@ namespace Palkkasovellus.Models
     {
         public int Id { get; set; }
         public string HenkiloNro { get; set; }
-        public string Sukupuoli { get; set; }
-        public string KuvaUrl { get; set; }
         public string Kokonimi { get; set; }
         public DateTime AloitusPvm { get; set; }
         public string Tehtava { get; set; }
