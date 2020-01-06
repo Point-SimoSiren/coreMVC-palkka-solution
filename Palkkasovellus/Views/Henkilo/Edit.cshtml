@@ -1,0 +1,170 @@
+﻿@model HenkiloEditViewModel
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Etusivu</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">Employee List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Henkilön tietojen muokkaus</li>
+                </ol>
+            </nav><br /><br />
+            <form method="post" enctype="multipart/form-data" asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="HenkiloNro"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="HenkiloNro" class="form-control" readonly style="background-color: #293043" />
+                        <span asp-validation-for="HenkiloNro" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="AloitusPvm"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="AloitusPvm" class="form-control" readonly style="background-color: #293043" />
+                        <span asp-validation-for="AloitusPvm" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="Etunimi"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="Etunimi" class="form-control" placeholder="Anna etunimi.." readonly style="background-color: #293043" />
+                        <span asp-validation-for="Etunimi" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2">
+                        <input asp-for="ToinenNimi" class="form-control" placeholder="Anna toinen nimi.." readonly style="background-color: #293043" />
+                        <span asp-validation-for="ToinenNimi" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="Sukunimi"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="Sukunimi" class="form-control" placeholder="Anna sukunimi.." readonly style="background-color: #293043" />
+                        <span asp-validation-for="Sukunimi" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="Sukupuoli"></label>
+                    </div>
+                    <div class="form-check col-md-3">
+                        <select class="form-control" asp-for="Sukupuoli">
+                            <option>Mies</option>
+                            <option>Nainen</option>
+                        </select>
+                        <span asp-validation-for="Sukupuoli" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="SyntymaAika"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="SyntymaAika" class="form-control" readonly style="background-color: #293043" />
+                        <span asp-validation-for="SyntymaAika" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="SosTurvaTunnus"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="SosTurvaTunnus" class="form-control" placeholder="Anna sotu.." readonly style="background-color: #293043" />
+                        <span asp-validation-for="SosTurvaTunnus" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="Sahkoposti"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="Sahkoposti" class="form-control" />
+                        <span asp-validation-for="Sahkoposti" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="Puhelin"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="Puhelin" class="form-control" placeholder="Anna puhelinnumero.." />
+                        <span asp-validation-for="Puhelin" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="Maksutapa"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <select asp-for="Maksutapa" class="form-control" asp-items="Html.GetEnumSelectList<Palkkasovellus.Entity.Maksutapa>()"></select>
+                        <span asp-validation-for="Maksutapa" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-2"></div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="LiitonJasen"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <select asp-for="LiitonJasen" class="form-control" asp-items="Html.GetEnumSelectList<Palkkasovellus.Entity.LiitonJasen>()"></select>
+                        <span asp-validation-for="LiitonJasen" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label asp-for="Tehtava"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="Tehtava" class="form-control" placeholder="Anna tehtävänimike.." />
+                        <span asp-validation-for="Tehtava" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="form-group col-md-1">
+                        <label asp-for="KuvaUrl"></label>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <div class="btn btn-primary btn-icon-text">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <input asp-for="KuvaUrl" type="file" value="Upload" />
+                            <span asp-validation-for="KuvaUrl" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Osoite"></label>
+                    <input asp-for="Osoite" class="form-control" placeholder="Anna osoite...." />
+                    <span asp-validation-for="Osoite" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Kaupunki"></label>
+                    <input asp-for="Kaupunki" class="form-control" placeholder="Anna asuinkunta.." />
+                    <span asp-validation-for="Kaupunki" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Postinro"></label>
+                    <input asp-for="Postinro" class="form-control" placeholder="Anna postinumero.." />
+                    <span asp-validation-for="Postinro" class="text-danger"></span>
+                </div><br /><br />
+
+                <div class="form-group">
+
+                    <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-plus-square" style="margin-right:0.7em"></i>Vahvista muutos</button>
+                    <a asp-action="index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Peruuta</a>
+                    <br />
+                    <br />
+                    <br />
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

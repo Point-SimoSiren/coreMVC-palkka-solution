@@ -29,8 +29,8 @@ namespace Palkkasovellus
         public IConfiguration Configuration { get; }
 
         //_______Palvelujen kontaineri________________________________
+        //Tähän kontaineriin laittamalla servicet ovat omien dependency injectioneiden saatavilla.
 
-        //Tähän kontaineriin laittamalla servicet ovat omien dependency injectioneidemme saatavilla.
         // This method gets called by the runtime.
         public void ConfigureServices(IServiceCollection services)
         {
