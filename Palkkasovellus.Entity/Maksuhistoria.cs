@@ -31,6 +31,15 @@ namespace Palkkasovellus.Entity
 
         public string Veronumero { get; set; }
 
+        [Column(TypeName = "decimal(18, 2)")]
+        public decimal Veroprosentti { get; set; }
+
+        [Column(TypeName = "Money")]
+        public decimal Tuloraja { get; set;  }
+
+        [Column(TypeName = "decimal(18, 2)")]
+        public decimal Lisaprosentti { get; set;  }
+
         [Column(TypeName = "money")]
         public decimal Tuntipalkka { get; set; }
 

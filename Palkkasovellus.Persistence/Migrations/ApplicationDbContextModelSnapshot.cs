@@ -319,6 +319,9 @@ namespace Palkkasovellus.Persistence.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
+                    b.Property<decimal>("Lisaprosentti")
+                        .HasColumnType("decimal(18, 2)");
+
                     b.Property<string>("MaksuKuukausi")
                         .HasColumnType("nvarchar(max)");
 
@@ -343,6 +346,9 @@ namespace Palkkasovellus.Persistence.Migrations
                     b.Property<string>("Sotu")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("Tuloraja")
+                        .HasColumnType("Money");
+
                     b.Property<decimal>("Tuntimaara")
                         .HasColumnType("decimal(18, 2)");
 
@@ -360,6 +366,9 @@ namespace Palkkasovellus.Persistence.Migrations
 
                     b.Property<string>("Veronumero")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Veroprosentti")
+                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<int>("VerovuosiId")
                         .HasColumnType("int");

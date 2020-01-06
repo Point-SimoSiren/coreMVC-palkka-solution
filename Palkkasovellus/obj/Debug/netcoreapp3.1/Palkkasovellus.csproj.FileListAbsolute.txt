@@ -74,3 +74,9 @@ C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Razor\Views\Henkilo\Create.csh
 C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Razor\Views\Henkilo\Delete.cshtml.g.cs
 C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Razor\Views\Henkilo\Detail.cshtml.g.cs
 C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Razor\Views\Henkilo\Edit.cshtml.g.cs
+C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll
