@@ -31,5 +31,7 @@ namespace Palkkasovellus.Services
 
         decimal Nettopalkka(decimal palkkaYhteensa, decimal vahennyksetYhteensa);
 
+        Verovuosi GetVerovuosiById(int verovuosiId);
+        decimal YlityoTuntipalkka(decimal tuntipalkka);
     }
 }

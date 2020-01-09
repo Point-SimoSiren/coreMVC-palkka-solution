@@ -22,7 +22,7 @@ namespace Palkkasovellus.Entity
 
         public DateTime Maksupaiva { get; set; }
 
-        public string MaksuKuukausi { get; set; }
+        public string Maksukuukausi { get; set; }
 
         [ForeignKey("Verovuosi")]
         public int VerovuosiId { get; set; }
@@ -81,5 +81,6 @@ namespace Palkkasovellus.Entity
 
         [Column(TypeName = "Money")]
         public decimal Nettopalkka { get; set; }
+        public decimal VeronMaara { get; set; }
     }
 }

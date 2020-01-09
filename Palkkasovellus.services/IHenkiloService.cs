@@ -1,4 +1,5 @@
-﻿using Palkkasovellus.Entity;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Palkkasovellus.Entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,5 +16,7 @@ namespace Palkkasovellus.Services
         Task Delete(int henkiloId);
         decimal Jasenmaksut(int id);
         IEnumerable<Henkilo> GetAll();
+
+        IEnumerable<SelectListItem> GetAllHenkilotPalkkatietoihin();
     }
 }

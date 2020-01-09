@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Palkkasovellus.Services
 {
-    interface ITyottomuusvakuutusService
+    public interface ITyottomuusvakuutusService
     {
         public decimal TyottomuusvakuutuksenMaara(decimal kokonaisAnsio,
             decimal tyottomuusvakuutusProsentti);

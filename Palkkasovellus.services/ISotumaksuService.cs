@@ -4,8 +4,9 @@ using System.Text;
 
 namespace Palkkasovellus.Services
 {
-    interface ISotumaksuService
+    public interface ISotumaksuService
     {
         decimal SotumaksunMaara(decimal kokonaisAnsio, decimal sotumaksuProsentti);
+        decimal SotumaksunMaara(decimal kokonaisAnsio, object sotumaksuProsentti);
     }
 }

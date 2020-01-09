@@ -1,4 +1,5 @@
-﻿using Palkkasovellus.Entity;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Palkkasovellus.Entity;
 using Palkkasovellus.Persistence;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,15 @@ namespace Palkkasovellus.Services.Implementations
         public decimal Jasenmaksut(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<SelectListItem> GetAllHenkilotPalkkatietoihin()
+        {
+            return GetAll().Select(henk => new SelectListItem()
+            {
+                Text = henk.Kokonimi,
+                Value = henk.Id.ToString()
+            });
         }
     }
 }
