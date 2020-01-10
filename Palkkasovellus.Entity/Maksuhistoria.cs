@@ -71,7 +71,7 @@ namespace Palkkasovellus.Entity
         public decimal Tyottomyysvakuutus { get; set; }
 
         [Column(TypeName = "Money")]
-        public decimal? Jasenmaksu { get; set; }
+        public decimal Jasenmaksu { get; set; }
 
         [Column(TypeName = "Money")]
         public decimal PalkkaYhteensa { get; set; }
@@ -82,5 +82,6 @@ namespace Palkkasovellus.Entity
         [Column(TypeName = "Money")]
         public decimal Nettopalkka { get; set; }
         public decimal VeronMaara { get; set; }
+        public decimal Elakemaksu { get; set; }
     }
 }

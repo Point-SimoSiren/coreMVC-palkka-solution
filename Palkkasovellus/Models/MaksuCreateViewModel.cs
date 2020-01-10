@@ -43,14 +43,20 @@ namespace Palkkasovellus.Models
 
         [Display(Name = "Ylityöpalkka")]
         public decimal YlityoPalkka { get; set; }
+
         public decimal Vero { get; set; }
+
         public decimal Elakemaksu { get; set; }
+
 
         //public decimal Jasenmaksu { get; set; }
 
         public decimal Sotumaksu { get; set; }
+
         public decimal PalkkaYhteensa { get; set; }
+
         public decimal VahennuksetYhteensa { get; set; }
+
         public decimal Nettopalkka { get; set; }
     }
 }

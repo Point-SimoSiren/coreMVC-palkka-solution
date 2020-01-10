@@ -128,73 +128,73 @@ namespace Palkkasovellus.Controllers
             var model = new MaksuDetailViewModel()
             {
                 Id = maksutapahtuma.Id,
-                EmployeeId = maksutapahtuma.HenkiloId,
-                FullName = maksutapahtuma.Kokonimi,
+                HenkiloId = maksutapahtuma.HenkiloId,
+                Kokonimi = maksutapahtuma.Kokonimi,
+                Sotu = maksutapahtuma.Sotu,
+                Maksupaiva = maksutapahtuma.Maksupaiva,
+                Maksukuukausi = maksutapahtuma.Maksukuukausi,
+                VerovuosiId = maksutapahtuma.VerovuosiId,
+                Vuosi = _laskentaService.GetVerovuosiById(maksutapahtuma.VerovuosiId).Verotusvuosi,
+                Veronumero = maksutapahtuma.Veronumero,
+                Tuntipalkka = maksutapahtuma.Tuntipalkka,
+                TehdytTunnit = maksutapahtuma.Tuntimaara,
+                SaannolTunnit = maksutapahtuma.SaannollisetTunnit,
+                Ylityotunnit = maksutapahtuma.Ylityotunnit,
+                YlityoTuntipalkka = _laskentaService.YlityoTuntipalkka(maksutapahtuma.Tuntipalkka),
+                SaannolPalkka = maksutapahtuma.SaannolPalkka,
+                Ylityopalkka = maksutapahtuma.YlityoPalkka,
+                Vero = maksutapahtuma.Ennakonpidatys,
                 Sotumaksu = maksutapahtuma.Sosiaaliturvamaksu,
-                PayDate = paymentRecord.PayDate,
-                PayMonth = paymentRecord.PayMonth,
-                TaxYearId = paymentRecord.TaxYearId,
-                Year = _payComputationService.GetTaxYearById(paymentRecord.TaxYearId).YearOfTax,
-                TaxCode = paymentRecord.TaxCode,
-                HourlyRate = paymentRecord.HourlyRate,
-                HoursWorked = paymentRecord.HoursWorked,
-                ContractualHours = paymentRecord.ContractualHours,
-                OvertimeHours = paymentRecord.OvertimeHours,
-                OvertimeRate = _payComputationService.OvertimeRate(paymentRecord.HourlyRate),
-                ContractualEarnings = paymentRecord.ContractualEarnings,
-                OvertimeEarnings = paymentRecord.OvertimeEarnings,
-                Tax = paymentRecord.Tax,
-                NIC = paymentRecord.NIC,
-                UnionFee = paymentRecord.UnionFee,
-                SLC = paymentRecord.SLC,
-                TotalEarnings = paymentRecord.TotalEarnings,
-                TotalDeduction = paymentRecord.TotalDeduction,
-                Employee = paymentRecord.Employee,
-                TaxYear = paymentRecord.TaxYear,
-                NetPayment = paymentRecord.NetPayment
+                Jasenmaksu = maksutapahtuma.Jasenmaksu,
+                Elakemaksu = maksutapahtuma.Elakemaksu,
+                PalkkaYhteensa = maksutapahtuma.PalkkaYhteensa,
+                VahennuksetYhteensa = maksutapahtuma.VahennyksetYhteensa,
+                Henkilo = maksutapahtuma.Henkilo,
+                Verovuosi = maksutapahtuma.Verovuosi,
+                Nettopalkka = maksutapahtuma.Nettopalkka
             };
             return View(model);
         }
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult Payslip(int id)
+        public IActionResult Palkkatosite(int id)
         {
-            var paymentRecord = _payComputationService.GetById(id);
-            if (paymentRecord == null)
+            var maksutapahtuma = _laskentaService.GetById(id);
+            if (maksutapahtuma == null)
             {
                 return NotFound();
             }
 
-            var model = new PaymentRecordDetailViewModel()
+            var model = new MaksuDetailViewModel()
             {
-                Id = paymentRecord.Id,
-                EmployeeId = paymentRecord.EmployeeId,
-                FullName = paymentRecord.FullName,
-                NiNo = paymentRecord.NiNo,
-                PayDate = paymentRecord.PayDate,
-                PayMonth = paymentRecord.PayMonth,
-                TaxYearId = paymentRecord.TaxYearId,
-                Year = _payComputationService.GetTaxYearById(paymentRecord.TaxYearId).YearOfTax,
-                TaxCode = paymentRecord.TaxCode,
-                HourlyRate = paymentRecord.HourlyRate,
-                HoursWorked = paymentRecord.HoursWorked,
-                ContractualHours = paymentRecord.ContractualHours,
-                OvertimeHours = paymentRecord.OvertimeHours,
-                OvertimeRate = _payComputationService.OvertimeRate(paymentRecord.HourlyRate),
-                ContractualEarnings = paymentRecord.ContractualEarnings,
-                OvertimeEarnings = paymentRecord.OvertimeEarnings,
-                Tax = paymentRecord.Tax,
-                NIC = paymentRecord.NIC,
-                UnionFee = paymentRecord.UnionFee,
-                SLC = paymentRecord.SLC,
-                TotalEarnings = paymentRecord.TotalEarnings,
-                TotalDeduction = paymentRecord.TotalDeduction,
-                Employee = paymentRecord.Employee,
-                TaxYear = paymentRecord.TaxYear,
-                NetPayment = paymentRecord.NetPayment
+                Id = maksutapahtuma.Id,
+                HenkiloId = maksutapahtuma.HenkiloId,
+                Kokonimi = maksutapahtuma.Kokonimi,
+                Sotu = maksutapahtuma.Sotu,
+                Maksupaiva = maksutapahtuma.Maksupaiva,
+                Maksukuukausi = maksutapahtuma.Maksukuukausi,
+                VerovuosiId = maksutapahtuma.VerovuosiId,
+                Vuosi = _laskentaService.GetVerovuosiById(maksutapahtuma.VerovuosiId).Verotusvuosi,
+                Veronumero = maksutapahtuma.Veronumero,
+                Tuntipalkka = maksutapahtuma.Tuntipalkka,
+                TehdytTunnit = maksutapahtuma.Tuntimaara,
+                SaannolTunnit = maksutapahtuma.SaannollisetTunnit,
+                Ylityotunnit = maksutapahtuma.Ylityotunnit,
+                YlityoTuntipalkka = _laskentaService.YlityoTuntipalkka(maksutapahtuma.Tuntipalkka),
+                SaannolPalkka = maksutapahtuma.SaannolPalkka,
+                Ylityopalkka = maksutapahtuma.YlityoPalkka,
+                Vero = maksutapahtuma.Ennakonpidatys,
+                Sotumaksu = maksutapahtuma.Sosiaaliturvamaksu,
+                Jasenmaksu = maksutapahtuma.Jasenmaksu,
+                Elakemaksu = maksutapahtuma.Elakemaksu,
+                PalkkaYhteensa = maksutapahtuma.PalkkaYhteensa,
+                VahennuksetYhteensa = maksutapahtuma.VahennyksetYhteensa,
+                Henkilo = maksutapahtuma.Henkilo,
+                Verovuosi = maksutapahtuma.Verovuosi,
+                Nettopalkka = maksutapahtuma.Nettopalkka
             };
-            //return View(model);
+            return View(model);
             //return new ViewAsPdf("Payslip", model);
         }
 

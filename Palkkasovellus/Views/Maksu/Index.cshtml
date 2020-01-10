@@ -1,0 +1,68 @@
+﻿@model  IEnumerable<MaksuIndexViewModel>
+
+@{ ViewBag.Title = "Maksetut palkat";}
+
+    <div class="row">
+        <div class="col-md-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Etusivu</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Maksetut palkat</li>
+                        </ol>
+                    </nav><br /><br />
+                    <div class="row">
+                        <div class="col-md-12 table-responsive-md">
+                            <a class="btn btn-xs btn-outline-success float-md-right" asp-action="Create"> Uusi maksu</a>
+
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Henkilö</th>
+                                        <th>Maksupäivä</th>
+                                        <th>Palkkakuukausi</th>
+                                        <th>Vuosi</th>
+                                        <th>Palkka yhteensä</th>
+                                        <th>Pidätykset yhteensä</th>
+                                        <th>Nettomaksu</th>
+                                        <th class="text-warning">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <a asp-action="Detail" asp-route-id="@item.Id">
+                                                    @item.Kokonimi
+                                                </a>
+                                            </td>
+                                            <td>
+                                                @item.Maksupaiva.ToString("dd/MM/yyyy")
+                                            </td>
+                                            <td>@item.Maksukuukausi</td>
+                                            <td>@item.Vuosi</td>
+                                            <td>@item.PalkkaYhteensa.ToString("C")</td>
+                                            <td>@item.VahennuksetYhteensa.ToString("c")</td>
+                                            <td>@item.Nettopalkka.ToString("C")</td>
+                                            <td>
+                                                
+                                                <a class="text-success" asp-action="Palkkatosite" asp-route-id="@item.Id">
+                                                    <i class="fas fa-bars"></i> Palkkatositteen esikatselu
+                                                </a>
+                                                <a class="text-danger" asp-action="Palkkatosite" asp-route-id="@item.Id">
+                                                      <i class="fas fa-file-pdf"></i>  Palkkatosite Pdf
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table><br />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

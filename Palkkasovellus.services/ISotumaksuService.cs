@@ -7,6 +7,5 @@ namespace Palkkasovellus.Services
     public interface ISotumaksuService
     {
         decimal SotumaksunMaara(decimal kokonaisAnsio, decimal sotumaksuProsentti);
-        decimal SotumaksunMaara(decimal kokonaisAnsio, object sotumaksuProsentti);
     }
 }
