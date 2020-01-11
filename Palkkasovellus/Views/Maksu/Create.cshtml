@@ -1,6 +1,6 @@
 ﻿@model MaksuCreateViewModel
 
-@{ ViewBag.Title = "Palkanlaskenta";}
+@{ ViewBag.Title = "Palkkasovellus | uusi maksu";}
 
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
@@ -15,85 +15,83 @@
             <form method="post" enctype="multipart/form-data" asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="EmployeeId"></label>
-                    <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.employees">
-                        <option selected>--- Select Employee ---</option>
+                    <label asp-for="HenkiloId"></label>
+                    <select asp-for="HenkiloId" class="form-control" asp-items="ViewBag.henkilot">
+                        <option selected>--- Valitse henkilö ---</option>
                     </select>
-                    <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                    <span asp-validation-for="HenkiloId" class="text-danger"></span>
                 </div><br /><br /><br />
                 <div class="form-row">
                     <div class="form-group col-md-1">
-                        <label asp-for="PayMonth"></label>
+                        <label asp-for="Maksukuukausi"></label>
                     </div>
                     <div class="form-group col-md-3">
-                        <select asp-for="PayMonth" class="form-control">
-                            <option selected>-- Select Month ---</option>
-                            <option>January</option>
-                            <option>February</option>
-                            <option>March</option>
-                            <option>April</option>
-                            <option>May</option>
-                            <option>June</option>
-                            <option>July</option>
-                            <option>August</option>
-                            <option>September</option>
-                            <option>October</option>
-                            <option>November</option>
-                            <option>December</option>
+                        <select asp-for="Maksukuukausi" class="form-control">
+                            <option selected>-- Valitse kuukausi ---</option>
+                            <option>Tammi</option>
+                            <option>Helmi</option>
+                            <option>Maalis</option>
+                            <option>Huhti</option>
+                            <option>Touko</option>
+                            <option>Kesä</option>
+                            <option>Heinä</option>
+                            <option>Elo</option>
+                            <option>Syys</option>
+                            <option>Loka</option>
+                            <option>Marras</option>
+                            <option>Joulu</option>
                         </select>
-                        <span asp-validation-for="PayMonth" class="text-danger"></span>
+                        <span asp-validation-for="Maksukuukausi" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-1">
-                        <label asp-for="TaxYearId"></label>
+                        <label asp-for="VerovuosiId"></label>
 
                     </div>
                     <div class="form-group col-md-3">
-                        <select asp-for="TaxYearId" class="form-control" asp-items="ViewBag.taxYears">
-                            <option selected>--- Select Tax Year ---</option>
+                        <select asp-for="VerovuosiId" class="form-control" asp-items="ViewBag.verovuodet">
+                            <option selected>--- Valitse verotusvuosi ---</option>
                         </select>
-                        <span asp-validation-for="TaxYearId" class="text-danger"></span>
+                        <span asp-validation-for="VerovuosiId" class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-1">
-                        <label asp-for="PayDate"></label>
+                        <label asp-for="Maksupaiva"></label>
                     </div>
                     <div class="form-group col-md-3">
-                        <input  asp-for="PayDate" class="form-control"/>
-                        <span asp-validation-for="PayDate"></span>
+                        <input  asp-for="Maksupaiva" class="form-control"/>
+                        <span asp-validation-for="Maksupaiva"></span>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-1">
-                        <label asp-for="HourlyRate"></label>
+                        <label asp-for="Tuntipalkka"></label>
                     </div>
                     <div class="form-group col-md-3">
-                        <input asp-for="HourlyRate" class="form-control" placeholder="0.00" />
-                        <span asp-validation-for="HourlyRate"></span>
+                        <input asp-for="Tuntipalkka" class="form-control" placeholder="0.00" />
+                        <span asp-validation-for="Tuntipalkka"></span>
                     </div>
                     <div class="form-group col-md-1">
-                        <label asp-for="HoursWorked"></label>
+                        <label asp-for="TehdytTunnit"></label>
                     </div>
                     <div class="form-group col-md-3">
-                        <input asp-for="HoursWorked" class="form-control" placeholder="0.00" />
-                        <span asp-validation-for="HoursWorked"></span>
+                        <input asp-for="TehdytTunnit" class="form-control" placeholder="0.00" />
+                        <span asp-validation-for="TehdytTunnit"></span>
                     </div>
                     <div class="form-group col-md-1">
-                        <label asp-for="ContractualHours"></label>
+                        <label asp-for="SaannollisetTunnit"></label>
                     </div>
                     <div class="form-group col-md-3">
-                        <input asp-for="ContractualHours" class="form-control"/>
-                        <span asp-validation-for="ContractualHours"></span>
+                        <input asp-for="SaannollisetTunnit" class="form-control"/>
+                        <span asp-validation-for="SaannollisetTunnit"></span>
                     </div>
                 </div><br /><br />
 
-
                 <div class="form-group">
 
-                    <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-calculator" style="margin-right:0.7em"></i>Compute & Save</button>
-                    <a asp-action="index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Back to Pay List</a>
+                    <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-calculator" style="margin-right:0.7em"></i>Laske ja tallenna</button>
+                    <a asp-action="index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Takaisin listaukseen</a>
                     <br />
                     <br />
                     <br />
-
                 </div>
             </form>
         </div>

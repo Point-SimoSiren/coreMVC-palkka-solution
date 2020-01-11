@@ -80,3 +80,7 @@ C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Dependenc
 C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
 C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll
+C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Razor\Views\Maksu\Create.cshtml.g.cs
+C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Razor\Views\Maksu\Detail.cshtml.g.cs
+C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Razor\Views\Maksu\Index.cshtml.g.cs
+C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Razor\Views\Maksu\Palkkatosite.cshtml.g.cs
