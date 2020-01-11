@@ -9,29 +9,25 @@ namespace Palkkasovellus.Services
 {
     public interface ILaskentaService
     {
-        Task CreateAsync(Maksuhistoria maksuhistoria);
+        Task CreateAsync(Maksutapahtuma maksutapahtuma);
         
-        Maksuhistoria GetById(int id); //Vastaa yhtä maksutapahtumaa
+        Maksutapahtuma GetById(int id);
 
-        IEnumerable<Maksuhistoria> GetAll();
+        IEnumerable<Maksutapahtuma> GetAll();
 
-        IEnumerable<SelectListItem> GetAllVerovuosi();
-
-        decimal Ylityotunnit(decimal tuntimaara, decimal SaannollisetTunnit);
+        decimal Ylityotunnit(decimal tehdytTunnit, decimal SaannollisetTunnit);
 
         decimal SaannolPalkka(decimal saannollisetTunnit, decimal tehdytTunnit, decimal tuntipalkka);
 
-        decimal YlityoTuntipalkka(decimal tuntipalkka, decimal ylityotunnit);
+        decimal YlityoTuntipalkka(decimal tuntipalkka);
 
-        decimal YlityoPalkka(decimal ylityoTuntipalkka, decimal ylityotunnit);
+        decimal Ylityopalkka(decimal ylityoTuntipalkka, decimal ylityotunnit);
 
-        decimal PalkkaYhteensa(decimal saannolPalkka, decimal ylityoPalkka);
+        decimal PalkkaYhteensa(decimal saannolPalkka, decimal ylityopalkka);
 
-        decimal VahennyksetYhteensa(decimal ennakonpidatys, decimal tyoelakemaksu, decimal sosiaaliturvamaksu, decimal tyottomuusvakuutus, decimal jasenmaksu);
+        decimal VahennyksetYhteensa(decimal vero, decimal tyoelakemaksu, decimal sotumaksu, decimal tyottomuusvakuutus, decimal jasenmaksu);
 
         decimal Nettopalkka(decimal palkkaYhteensa, decimal vahennyksetYhteensa);
 
-        Verovuosi GetVerovuosiById(int verovuosiId);
-        decimal YlityoTuntipalkka(decimal tuntipalkka);
     }
 }

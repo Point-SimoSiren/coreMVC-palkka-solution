@@ -13,8 +13,7 @@ namespace Palkkasovellus.Persistence
             : base(options)
         {
         }
-        public DbSet<Maksuhistoria> Maksuhistoriat { get; set; }
+        public DbSet<Maksutapahtuma> Maksutapahtumat { get; set; }
         public DbSet<Henkilo> Henkilot { get; set; }
-        public DbSet<Verovuosi> Verov { get; set; }
     }
 }

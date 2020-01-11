@@ -400,6 +400,15 @@
           }
         }
       },
+      "Rotativa.Core/2.0.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Rotativa.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Rotativa.Core.dll": {}
+        }
+      },
       "runtime.native.System/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1345,6 +1354,9 @@
       "Palkkasovellus.Entity/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Rotativa.Core": "2.0.2.1"
+        },
         "compile": {
           "bin/placeholder/Palkkasovellus.Entity.dll": {}
         },
@@ -1992,6 +2004,19 @@
         "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Rotativa.Core/2.0.2.1": {
+      "sha512": "XtMnJ4ym1KClra0rjUrNDRXFoOA0UGzeK68H7LIo0l7m5gBT6ncBuIfXc3cqCtR6ubpDqVSg1tAkJF5PG9dqww==",
+      "type": "package",
+      "path": "rotativa.core/2.0.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Rotativa/wkhtmltopdf.exe",
+        "lib/net45/Rotativa.Core.dll",
+        "rotativa.core.2.0.2.1.nupkg.sha512",
+        "rotativa.core.nuspec"
       ]
     },
     "runtime.native.System/4.3.0": {
@@ -5102,7 +5127,8 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.0",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.0",
-      "Palkkasovellus.Entity >= 1.0.0"
+      "Palkkasovellus.Entity >= 1.0.0",
+      "Rotativa.Core >= 2.0.2.1"
     ]
   },
   "packageFolders": {
@@ -5166,6 +5192,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[3.1.0, )"
+          },
+          "Rotativa.Core": {
+            "target": "Package",
+            "version": "[2.0.2.1, )"
           }
         },
         "imports": [
@@ -5186,5 +5216,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Rotativa.Core 2.0.2.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Rotativa.Core",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

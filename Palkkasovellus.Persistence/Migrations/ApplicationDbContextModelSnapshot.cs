@@ -299,12 +299,15 @@ namespace Palkkasovellus.Persistence.Migrations
                     b.ToTable("Henkilot");
                 });
 
-            modelBuilder.Entity("Palkkasovellus.Entity.Maksuhistoria", b =>
+            modelBuilder.Entity("Palkkasovellus.Entity.Maksutapahtuma", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("Elakemaksu")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Ennakonpidatys")
                         .HasColumnType("Money");
@@ -312,7 +315,7 @@ namespace Palkkasovellus.Persistence.Migrations
                     b.Property<int>("HenkiloId")
                         .HasColumnType("int");
 
-                    b.Property<decimal?>("Jasenmaksu")
+                    b.Property<decimal>("Jasenmaksu")
                         .HasColumnType("Money");
 
                     b.Property<string>("Kokonimi")
@@ -322,7 +325,7 @@ namespace Palkkasovellus.Persistence.Migrations
                     b.Property<decimal>("Lisaprosentti")
                         .HasColumnType("decimal(18, 2)");
 
-                    b.Property<string>("MaksuKuukausi")
+                    b.Property<string>("Maksukuukausi")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Maksupaiva")
@@ -364,16 +367,16 @@ namespace Palkkasovellus.Persistence.Migrations
                     b.Property<decimal>("VahennyksetYhteensa")
                         .HasColumnType("Money");
 
+                    b.Property<decimal>("VeronMaara")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("Veronumero")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Veroprosentti")
                         .HasColumnType("decimal(18, 2)");
 
-                    b.Property<int>("VerovuosiId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("YlityoPalkka")
+                    b.Property<decimal>("Ylityopalkka")
                         .HasColumnType("Money");
 
                     b.Property<decimal>("Ylityotunnit")
@@ -383,24 +386,7 @@ namespace Palkkasovellus.Persistence.Migrations
 
                     b.HasIndex("HenkiloId");
 
-                    b.HasIndex("VerovuosiId");
-
-                    b.ToTable("Maksuhistoriat");
-                });
-
-            modelBuilder.Entity("Palkkasovellus.Entity.Verovuosi", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Verotusvuosi")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Verov");
+                    b.ToTable("Maksutapahtumat");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -454,17 +440,11 @@ namespace Palkkasovellus.Persistence.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Palkkasovellus.Entity.Maksuhistoria", b =>
+            modelBuilder.Entity("Palkkasovellus.Entity.Maksutapahtuma", b =>
                 {
                     b.HasOne("Palkkasovellus.Entity.Henkilo", "Henkilo")
-                        .WithMany("Maksuhistoria")
+                        .WithMany("Maksutapahtuma")
                         .HasForeignKey("HenkiloId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Palkkasovellus.Entity.Verovuosi", "Verovuosi")
-                        .WithMany()
-                        .HasForeignKey("VerovuosiId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

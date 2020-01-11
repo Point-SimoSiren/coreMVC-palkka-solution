@@ -1,6 +1,6 @@
 ﻿@model MaksuDetailViewModel
 
-@{ ViewBag.Title = "Payslip";}
+@{ ViewBag.Title = "Palkkatosite";}
 
 @{ Layout = null;}
 
@@ -12,18 +12,17 @@
             <div class="card-body">
                 <div class="container-fluid d-flex justify-content-between">
                     <div class="col-md-3 pl-0">
-                        <p class="mt-5 mb-2"><b>PayCompute Ltd</b></p>
-                        <p>11 Downing Street<br />London<br />W1C 2XB</p>
+                        <p class="mt-5 mb-2"><b>Yritys Oy</b></p>
+                        <p>Uutelantie 1 E 12<br />06100<br />Porvoo</p>
                     </div>
                     <div class="col-md-3 pr-0">
-                        <p class="mt-5 mb-2 text-right"><b>Pay Date: @Model.PayDate.ToString("dd/MM/yyyy")</b></p>
-                        <p class="text-right">Tax Code: @Model.TaxCode<br />Year: @Model.Year<br />HMRC</p>
+                        <p class="mt-5 mb-2 text-right"><b>Maksupäivä: @Model.Maksupaiva.ToString("dd/MM/yyyy")</b></p>
                     </div>
                 </div><br /><br />
 
                 <div class="col-md-12 row">
-                    <div class="col-md-8"><h5>Employee's Name : @Model.FullName</h5></div>
-                    <div class="col-md-4"><h5>National Insurance Number : @Model.NiNo</h5></div>
+                    <div class="col-md-8"><h5>Maksun saajan nimi : @Model.Kokonimi</h5></div>
+                    <div class="col-md-4"><h5>Sotu : @Model.Sotu</h5></div>
                 </div>
             </div>
             <div class="row">
@@ -31,54 +30,60 @@
                     <table class="table table-striped">
                         <thead class="table-dark">
                             <tr>
-                                <th>Earnings</th>
-                                <th>Hours</th>
-                                <th>Rates</th>
-                                <th>Amount</th>
-                                <th>Deductions</th>
-                                <th>Amount</th>
+                                <th>Ansiotulo</th>
+                                <th>Tunnit</th>
+                                <th>Tuntipalkka</th>
+                                <th>Summa</th>
+                                <th>Pidätykset</th>
+                                <th>Summa</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><b>Basic :</b></td>
-                                <td>@Model.ContractualHours.ToString("f")</td>
-                                <td>@Model.HourlyRate.ToString("f")</td>
-                                <td>@Model.ContractualEarnings.ToString("C")</td>
-                                <td><b>Tax :</b></td>
-                                <td>@Model.Tax.ToString("C")</td>
+                                <td><b>Säännöllinen työaika :</b></td>
+                                <td>@Model.SaannolTunnit.ToString("f")</td>
+                                <td>@Model.Tuntipalkka.ToString("f")</td>
+                                <td>@Model.SaannolPalkka.ToString("C")</td>
+                                <td><b>Veronpidätys :</b></td>
+                                <td>@Model.Vero.ToString("C")</td>
+                                <td><b>Eläkemaksu :</b></td>
+                                <td>@Model.Elakemaksu.ToString("C")</td>
+                                
+
                             </tr>
                             <tr>
-                                <td><b>Overtime :</b></td>
-                                <td>@Model.OvertimeHours.ToString("f")</td>
-                                <td>@Model.OvertimeRate.ToString("f2")</td>
-                                <td>@Model.OvertimeEarnings.ToString("C")</td>
-                                <td><b>NIC :</b></td>
-                                <td>@Model.NIC.ToString("C")</td>
+                                <td><b>Ylityöt :</b></td>
+                                <td>@Model.Ylityotunnit.ToString("f")</td>
+                                <td>@Model.YlityoTuntipalkka.ToString("f2")</td>
+                                <td>@Model.Ylityopalkka.ToString("C")</td>
+                                <td><b>Sosiaaliturvamaksu :</b></td>
+                                <td>@Model.Sotumaksu.ToString("C")</td>
+                                <td><b>Sosiaaliturvamaksu :</b></td>
+                                <td>@Model.Sotumaksu.ToString("C")</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td><b>Työttömyysvakuutusmaksu :</b></td>
+                                <td>@Model.Tyottomuusvakuutus.ToString("C")</td>
+                                <td><b>Liiton maksu :</b></td>
+                                <td>@Model.Jasenmaksu.ToString("C")</td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td><b>Union :</b></td>
-                                <td>@Model.UnionFee.Value.ToString("C")</td>
+                                <td><b>Varalla :</b></td>
+                                <td>Varalla 1000</td>
                             </tr>
                             <tr>
+                                <td><b>Yhteensä :</b></td>
+                                <td>@Model.TehdytTunnit</td>
                                 <td></td>
+                                <td>@Model.PalkkaYhteensa.ToString("C")</td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><b>SLC :</b></td>
-                                <td>@Model.SLC.Value.ToString("C")</td>
-                            </tr>
-                            <tr>
-                                <td><b>Total :</b></td>
-                                <td>@Model.HoursWorked</td>
-                                <td></td>
-                                <td>@Model.TotalEarnings.ToString("C")</td>
-                                <td></td>
-                                <td>@Model.TotalDeduction.ToString("C")</td>
+                                <td>@Model.VahennuksetYhteensa.ToString("C")</td>
                             </tr>
                         </tbody>
                         <tfoot>
@@ -87,8 +92,8 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="table-dark"><b>NET PAY :</b></td>
-                                <td class="table-dark">@Model.NetPayment.ToString("C")</td>
+                                <td class="table-dark"><b>Nettomaksu :</b></td>
+                                <td class="table-dark">@Model.Nettopalkka.ToString("C")</td>
                             </tr>
                         </tfoot>
                     </table>

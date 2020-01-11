@@ -22,13 +22,8 @@ namespace Palkkasovellus.Models
 
         public string Maksukuukausi { get; set; }
 
-        [Display(Name = "Verovuosi")]
-        public int VerovuosiId { get; set; }
-
         public string Vuosi { get; set; }
 
-        public Verovuosi Verovuosi { get; set; }
-        
         public string Veronumero { get; set; } 
         
         public decimal Tuntipalkka { get; set; }
@@ -45,12 +40,18 @@ namespace Palkkasovellus.Models
         [Display(Name = "Ylityön tuntipalkka")]
         public decimal YlityoTuntipalkka { get; set; }
 
-
         [Display(Name = "Säännöllinen palkka")]
         public decimal SaannolPalkka { get; set; }
 
         [Display(Name = "Ylityön palkka")]
         public decimal Ylityopalkka { get; set; }
+
+        public decimal Veroprosentti { get; set; }
+
+        public decimal Tuloraja { get; set; }
+
+        [Display(Name = "Lisäprosentti")]
+        public decimal Lisaprosentti { get; set; }
 
         [Display(Name = "Ennakonpidätys")]
         public decimal Vero { get; set; }

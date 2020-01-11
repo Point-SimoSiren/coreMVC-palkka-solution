@@ -34,7 +34,7 @@ namespace Palkkasovellus.Entity
         public string Kaupunki { get; set; }
         [Required, MaxLength(50)]
         public string Postinro { get; set; }
-        public IEnumerable<Maksuhistoria> Maksuhistoria { get; set; }
+        public IEnumerable<Maksutapahtuma> Maksutapahtuma { get; set; }
 
     }
 }

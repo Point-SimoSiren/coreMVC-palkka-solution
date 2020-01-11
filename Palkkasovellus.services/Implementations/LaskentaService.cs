@@ -20,7 +20,7 @@ namespace Palkkasovellus.Services.Implementation
             _context = context;
         }
         //Säännöllisen työajan palkka yhteensä
-        public decimal Saannolpalkka(decimal saannollisetTunnit, decimal tehdytTunnit, decimal tuntipalkka)
+        public decimal SaannolPalkka(decimal saannollisetTunnit, decimal tehdytTunnit, decimal tuntipalkka)
         {
             if (tehdytTunnit < saannollisetTunnit)
             {
@@ -33,37 +33,24 @@ namespace Palkkasovellus.Services.Implementation
             return saannolPalkka;
         }
 
-        //Yksittäinen tapahtuma lisätään monikolliseen maksuhistoriat kokoelmaan
-        public async Task CreateAsync(Maksuhistoria maksuhistoria)
+        public async Task CreateAsync(Maksutapahtuma maksutapahtuma)
         {
-            await _context.Maksuhistoriat.AddAsync(maksuhistoria);
+            await _context.Maksutapahtumat.AddAsync(maksutapahtuma);
             await _context.SaveChangesAsync();
         }
 
-        public IEnumerable<Maksuhistoria> GetAll() => _context.Maksuhistoriat.OrderBy(mh => mh.HenkiloId);
+        public IEnumerable<Maksutapahtuma> GetAll() => _context.Maksutapahtumat.OrderBy(mt => mt.HenkiloId);
 
-
-        public IEnumerable<SelectListItem> GetAllVerovuosi()
-        {
-            //verov edustaa monikollista verovuosien kokoelmaa. Nimi voisi olla ennemmin verovuodet.
-            var AllVerovuosi = _context.Verov.Select(verov => new SelectListItem 
-            {
-                Text = verov.Verotusvuosi,
-                Value = verov.Id.ToString()
-            });
-            return AllVerovuosi;
-        }
-
-        //Yksittäisen maksutpahtuman haku ID:llä
-        public Maksuhistoria GetById(int id) =>
-            _context.Maksuhistoriat.Where(maksu => maksu.Id == id).FirstOrDefault();
+        public Maksutapahtuma GetById(int id) =>
+            _context.Maksutapahtumat.Where(maksu => maksu.Id == id).FirstOrDefault();
 
 
         public decimal Nettopalkka(decimal palkkaYhteensa, decimal vahennyksetYhteensa)
             => palkkaYhteensa - vahennyksetYhteensa;
 
+        //-----Ylityöpalkat---------------------------------------------------------
 
-        public decimal YlityoPalkka(decimal ylityoTuntipalkka, decimal ylityotunnit)
+        public decimal Ylityopalkka(decimal ylityoTuntipalkka, decimal ylityotunnit)
             => ylityotunnit * ylityoTuntipalkka;
 
         public decimal Ylityotunnit(decimal tehdytTunnit, decimal saannolTunnit)
@@ -81,24 +68,12 @@ namespace Palkkasovellus.Services.Implementation
 
         public decimal YlityoTuntipalkka(decimal tuntipalkka) => tuntipalkka * 1.5m;
 
-        public decimal VahennyksetYhteensa(decimal ennakonpidatys, decimal tyoelakemaksu,
-            decimal sosiaaliturvamaksu, decimal tyottomyysvakuutus, decimal jasenmaksu)
-        => ennakonpidatys + tyoelakemaksu + sosiaaliturvamaksu + tyottomyysvakuutus + jasenmaksu;
+        public decimal VahennyksetYhteensa(decimal vero, decimal tyoelakemaksu,
+            decimal sotumaksu, decimal tyottomyysvakuutus, decimal jasenmaksu)
+        => vero + tyoelakemaksu + sotumaksu + tyottomyysvakuutus + jasenmaksu;
 
-        public decimal PalkkaYhteensa(decimal ylityoPalkka, decimal saannolPalkka)
-        => ylityoPalkka + saannolPalkka;
+        public decimal PalkkaYhteensa(decimal ylityopalkka, decimal saannolPalkka)
+        => ylityopalkka + saannolPalkka;
 
-        public Verovuosi GetVerovuosiById(int id)
-        => _context.Verov.Where(vuosi => vuosi.Id == id).FirstOrDefault();
-
-        public decimal SaannolPalkka(decimal saannollisetTunnit, decimal tehdytTunnit, decimal tuntipalkka)
-        {
-            throw new NotImplementedException();
-        }
-
-        public decimal YlityoTuntipalkka(decimal tuntipalkka, decimal ylityotunnit)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

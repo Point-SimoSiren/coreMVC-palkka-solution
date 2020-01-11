@@ -10,7 +10,8 @@
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
           "Palkkasovellus.Entity": "1.0.0",
-          "Palkkasovellus.Persistence": "1.0.0"
+          "Palkkasovellus.Persistence": "1.0.0",
+          "Rotativa.Core": "2.0.2.1"
         },
         "runtime": {
           "Palkkasovellus.Services.dll": {}
@@ -831,6 +832,14 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.1.20722"
+          }
+        }
+      },
+      "Rotativa.Core/2.0.2.1": {
+        "runtime": {
+          "lib/net45/Rotativa.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -1746,6 +1755,9 @@
         }
       },
       "Palkkasovellus.Entity/1.0.0": {
+        "dependencies": {
+          "Rotativa.Core": "2.0.2.1"
+        },
         "runtime": {
           "Palkkasovellus.Entity.dll": {}
         }
@@ -1754,7 +1766,8 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.0",
-          "Palkkasovellus.Entity": "1.0.0"
+          "Palkkasovellus.Entity": "1.0.0",
+          "Rotativa.Core": "2.0.2.1"
         },
         "runtime": {
           "Palkkasovellus.Persistence.dll": {}
@@ -2236,6 +2249,13 @@
       "sha512": "sha512-5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
       "path": "newtonsoft.json.bson/1.0.1",
       "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
+    },
+    "Rotativa.Core/2.0.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XtMnJ4ym1KClra0rjUrNDRXFoOA0UGzeK68H7LIo0l7m5gBT6ncBuIfXc3cqCtR6ubpDqVSg1tAkJF5PG9dqww==",
+      "path": "rotativa.core/2.0.2.1",
+      "hashPath": "rotativa.core.2.0.2.1.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

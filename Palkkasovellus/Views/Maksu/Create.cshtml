@@ -12,88 +12,125 @@
                     <li class="breadcrumb-item active" aria-current="page">Palkanlaskenta</li>
                 </ol>
             </nav><br /><br />
-            <form method="post" enctype="multipart/form-data" asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="HenkiloId"></label>
-                    <select asp-for="HenkiloId" class="form-control" asp-items="ViewBag.henkilot">
-                        <option selected>--- Valitse henkilö ---</option>
-                    </select>
-                    <span asp-validation-for="HenkiloId" class="text-danger"></span>
-                </div><br /><br /><br />
-                <div class="form-row">
-                    <div class="form-group col-md-1">
-                        <label asp-for="Maksukuukausi"></label>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <select asp-for="Maksukuukausi" class="form-control">
-                            <option selected>-- Valitse kuukausi ---</option>
-                            <option>Tammi</option>
-                            <option>Helmi</option>
-                            <option>Maalis</option>
-                            <option>Huhti</option>
-                            <option>Touko</option>
-                            <option>Kesä</option>
-                            <option>Heinä</option>
-                            <option>Elo</option>
-                            <option>Syys</option>
-                            <option>Loka</option>
-                            <option>Marras</option>
-                            <option>Joulu</option>
-                        </select>
-                        <span asp-validation-for="Maksukuukausi" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-md-1">
-                        <label asp-for="VerovuosiId"></label>
+                        <form method="post" enctype="multipart/form-data" asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="HenkiloId"></label>
+                                <select asp-for="HenkiloId" class="form-control" asp-items="ViewBag.henkilot">
+                                    <option selected>--- Valitse henkilö ---</option>
+                                </select>
+                                <span asp-validation-for="HenkiloId" class="text-danger"></span>
+                            </div><br /><br /><br />
+                            <div class="form-row">
+                                <div class="form-group col-md-1">
+                                    <label asp-for="Maksukuukausi"></label>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <select asp-for="Maksukuukausi" class="form-control">
+                                        <option selected>-- Valitse kuukausi ---</option>
+                                        <option>Tammi</option>
+                                        <option>Helmi</option>
+                                        <option>Maalis</option>
+                                        <option>Huhti</option>
+                                        <option>Touko</option>
+                                        <option>Kesä</option>
+                                        <option>Heinä</option>
+                                        <option>Elo</option>
+                                        <option>Syys</option>
+                                        <option>Loka</option>
+                                        <option>Marras</option>
+                                        <option>Joulu</option>
+                                    </select>
+                                    <span asp-validation-for="Maksukuukausi" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-1">
+                                    <label asp-for="Maksupaiva"></label>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <input asp-for="Maksupaiva" class="form-control" />
+                                    <span asp-validation-for="Maksupaiva"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-1">
+                                    <label asp-for="Tuntipalkka"></label>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <input asp-for="Tuntipalkka" class="form-control" placeholder="0.00" />
+                                    <span asp-validation-for="Tuntipalkka"></span>
+                                </div>
+                                <div class="form-group col-md-1">
+                                    <label asp-for="TehdytTunnit"></label>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <input asp-for="TehdytTunnit" class="form-control" placeholder="0.00" />
+                                    <span asp-validation-for="TehdytTunnit"></span>
+                                </div>
+                                <div class="form-group col-md-1">
+                                    <label asp-for="SaannollisetTunnit"></label>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <input asp-for="SaannollisetTunnit" class="form-control" />
+                                    <span asp-validation-for="SaannollisetTunnit"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-1">
+                                    <label asp-for="Veroprosentti"></label>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <input asp-for="Veroprosentti" class="form-control" placeholder="0.0" />
+                                    <span asp-validation-for="Veroprosentti"></span>
+                                </div>
+                                <div class="form-group col-md-1">
+                                    <label asp-for="Tuloraja"></label>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <input asp-for="Tuloraja" class="form-control" placeholder="0.0" />
+                                    <span asp-validation-for="Tuloraja"></span>
+                                </div>
+                                <div class="form-group col-md-1">
+                                    <label asp-for="Lisaprosentti"></label>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <input asp-for="Lisaprosentti" class="form-control" />
+                                    <span asp-validation-for="Lisaprosentti"></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-1">
+                                    <label asp-for="Elakemaksuprosentti"></label>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <input asp-for="Elakemaksuprosentti" class="form-control" placeholder="0.00" />
+                                    <span asp-validation-for="Elakemaksuprosentti"></span>
+                                </div>
+                                <div class="form-group col-md-1">
+                                    <label asp-for="Sotumaksuprosentti"></label>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <input asp-for="Sotumaksuprosentti" class="form-control" placeholder="0.00" />
+                                    <span asp-validation-for="Sotumaksuprosentti"></span>
+                                </div>
+                                <div class="form-group col-md-1">
+                                    <label asp-for="Tyottomyysvakuutusprosentti"></label>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <input asp-for="Tyottomyysvakuutusprosentti" class="form-control" />
+                                    <span asp-validation-for="Tyottomyysvakuutusprosentti"></span>
+                                </div>
+                            </div>
+                            <br /><br />
 
-                    </div>
-                    <div class="form-group col-md-3">
-                        <select asp-for="VerovuosiId" class="form-control" asp-items="ViewBag.verovuodet">
-                            <option selected>--- Valitse verotusvuosi ---</option>
-                        </select>
-                        <span asp-validation-for="VerovuosiId" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-md-1">
-                        <label asp-for="Maksupaiva"></label>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <input  asp-for="Maksupaiva" class="form-control"/>
-                        <span asp-validation-for="Maksupaiva"></span>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-1">
-                        <label asp-for="Tuntipalkka"></label>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <input asp-for="Tuntipalkka" class="form-control" placeholder="0.00" />
-                        <span asp-validation-for="Tuntipalkka"></span>
-                    </div>
-                    <div class="form-group col-md-1">
-                        <label asp-for="TehdytTunnit"></label>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <input asp-for="TehdytTunnit" class="form-control" placeholder="0.00" />
-                        <span asp-validation-for="TehdytTunnit"></span>
-                    </div>
-                    <div class="form-group col-md-1">
-                        <label asp-for="SaannollisetTunnit"></label>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <input asp-for="SaannollisetTunnit" class="form-control"/>
-                        <span asp-validation-for="SaannollisetTunnit"></span>
-                    </div>
-                </div><br /><br />
+                            <div class="form-group">
 
-                <div class="form-group">
-
-                    <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-calculator" style="margin-right:0.7em"></i>Laske ja tallenna</button>
-                    <a asp-action="index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Takaisin listaukseen</a>
-                    <br />
-                    <br />
-                    <br />
-                </div>
-            </form>
+                                <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-calculator" style="margin-right:0.7em"></i>Laske ja tallenna</button>
+                                <a asp-action="index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Takaisin listaukseen</a>
+                                <br />
+                                <br />
+                                <br />
+                            </div>
+                        </form>
         </div>
     </div>
 </div>

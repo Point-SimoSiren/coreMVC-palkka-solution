@@ -24,9 +24,8 @@ namespace Palkkasovellus.Models
         [Display(Name ="Kuukausi")]
         public string Maksukuukausi { get; set; }
 
-        public int VerovuosiId { get; set; }
-
         public string Vuosi { get; set; }
+
         [Display(Name ="Ansiotulo yhteensä")]
         public decimal PalkkaYhteensa { get; set; }
 

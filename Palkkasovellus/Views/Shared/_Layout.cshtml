@@ -19,6 +19,7 @@
     </environment>
 
     <!-------------------------tyyli-tiedostoviittaukset------------------------------------------>
+
     <link rel="stylesheet" href="~/css/site.css" />
     <link  rel="stylesheet" href="~/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
@@ -38,7 +39,7 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
 
-                    <!--_____________________HENKILÖT LINKKI________________-->
+                    <!--------------------------------- HENKILÖT LINKKI ------------------------>
 
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#Employee" aria-expanded="false" aria-controls="ui-basic">
@@ -53,7 +54,7 @@
                             </ul>
                         </div>
                     </li>
-                    <!--_____________________PALKAT LINKKI__________________-->
+                    <!------------------------------- PALKAT LINKKI ------------------------------>
 
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#Payroll" aria-expanded="false" aria-controls="ui-basic">
@@ -63,8 +64,8 @@
                         </a>
                         <div class="collapse" id="Payroll">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index"> Uusi maksu</a></li>
-                                <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index"> Maksuhistoria</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-controller="Maksu" asp-action="Create"> Uusi maksu</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-controller="Maksu" asp-action="Index"> Maksuhistoria</a></li>
                             </ul>
                         </div>
                     </li>
@@ -84,7 +85,7 @@
                     <h3 style="font-family: 'Bradley Hand ITC'; margin-left: 30%"> Palkkasovellusprojekti @DateTime.Now.Year - Simo Sirén</h3>
                 </footer>
             </div>
-        
+        </div>
     </div>
 
     <environment include="Development">

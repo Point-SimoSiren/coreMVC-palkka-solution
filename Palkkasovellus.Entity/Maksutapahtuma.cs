@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Palkkasovellus.Entity
 {
-    public class Maksuhistoria
+    public class Maksutapahtuma
     {
         public int Id { get; set; }
 
@@ -23,11 +23,6 @@ namespace Palkkasovellus.Entity
         public DateTime Maksupaiva { get; set; }
 
         public string Maksukuukausi { get; set; }
-
-        [ForeignKey("Verovuosi")]
-        public int VerovuosiId { get; set; }
-
-        public Verovuosi Verovuosi { get; set; }
 
         public string Veronumero { get; set; }
 
@@ -56,7 +51,7 @@ namespace Palkkasovellus.Entity
         public decimal SaannolPalkka { get; set; }
 
         [Column(TypeName = "Money")]
-        public decimal YlityoPalkka { get; set; }
+        public decimal Ylityopalkka { get; set; }
 
         [Column(TypeName = "Money")]
         public decimal Ennakonpidatys { get; set; }
@@ -81,7 +76,9 @@ namespace Palkkasovellus.Entity
 
         [Column(TypeName = "Money")]
         public decimal Nettopalkka { get; set; }
+
         public decimal VeronMaara { get; set; }
+
         public decimal Elakemaksu { get; set; }
     }
 }
