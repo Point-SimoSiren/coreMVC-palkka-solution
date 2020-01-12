@@ -46,6 +46,12 @@ namespace Palkkasovellus
             // Itse lisätty: 1. on Palkkasovellus.Servicestä,
             // 2. -,,-.Implementations:ta, jotka on tarkoituksella eristetty eri nimiavaruuksiin.
             services.AddScoped<IHenkiloService, HenkiloService>();
+            services.AddScoped<ILaskentaService, LaskentaService>();
+            services.AddScoped<IVeroService, VeroService>();
+            services.AddScoped<IElakemaksuService, ElakemaksuService>();
+            services.AddScoped<ISotumaksuService, SotumaksuService>();
+            services.AddScoped<ITyottomyysvakuutusService, TyottomyysvakuutusService>();
+            services.AddScoped<IJasenmaksuService, JasenmaksuService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

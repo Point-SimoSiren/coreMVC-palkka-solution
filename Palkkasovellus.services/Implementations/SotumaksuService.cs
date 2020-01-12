@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Palkkasovellus.Services.Implementations
 {
-    class SotumaksuService : ISotumaksuService
+    public class SotumaksuService : ISotumaksuService
     {
         private decimal sotumaksunMaara;
         public decimal SotumaksunMaara(decimal kokonaisAnsio, decimal sotumaksuProsentti)

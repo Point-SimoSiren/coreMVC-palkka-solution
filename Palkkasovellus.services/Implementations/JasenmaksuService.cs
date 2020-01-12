@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Palkkasovellus.Services.Implementations
 {
-    class JasenmaksuService : IJasenmaksuService
+    public class JasenmaksuService : IJasenmaksuService
     {
         private decimal jasenmaksu;
         public decimal Jasenmaksu(decimal kokonaisAnsio, decimal jasenmaksuProsentti)

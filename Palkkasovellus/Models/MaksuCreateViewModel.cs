@@ -56,6 +56,10 @@ namespace Palkkasovellus.Models
         [Display(Name = "Työttömyysvakuutus-%")]
         public decimal Tyottomyysvakuutusprosentti { get; set; }
 
+        [Display(Name = "Jäsenmaksu-%")]
+        public decimal Jasenmaksuprosentti { get; set; }
+
+
         public decimal Vero { get; set; }
 
         [Display(Name = "Eläkemaksu")]

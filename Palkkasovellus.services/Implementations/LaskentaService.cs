@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Palkkasovellus.Entity;
 using Palkkasovellus.Persistence;
 
-namespace Palkkasovellus.Services.Implementation
+namespace Palkkasovellus.Services.Implementations
 {
     public class LaskentaService : ILaskentaService
     {

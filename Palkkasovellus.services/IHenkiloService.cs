@@ -14,7 +14,7 @@ namespace Palkkasovellus.Services
         Task UpdateAsync(Henkilo henkilo);
         Task UpdateAsync(int id);
         Task Delete(int henkiloId);
-        decimal Jasenmaksut(int id);
+        decimal Jasenmaksu(int id);
         IEnumerable<Henkilo> GetAll();
 
         IEnumerable<SelectListItem> GetAllHenkilotPalkkatietoihin();

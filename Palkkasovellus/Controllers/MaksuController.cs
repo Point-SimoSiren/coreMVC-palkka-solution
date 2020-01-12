@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Palkkasovellus.Entity;
 using Palkkasovellus.Models;
 using Palkkasovellus.Services;
-using Rotativa.Core;
+//using Rotativa.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +21,7 @@ namespace Palkkasovellus.Controllers
         private readonly IElakemaksuService _elakemaksuService;
 
         private readonly ISotumaksuService _sotumaksuService;
-        private readonly ITyottomuusvakuutusService _tyottomuusvakuutusService;
+        private readonly ITyottomyysvakuutusService _tyottomyysvakuutusService;
         private readonly IJasenmaksuService _jasenmaksuService;
 
         private decimal ylityotunnit;
@@ -36,13 +36,19 @@ namespace Palkkasovellus.Controllers
         private decimal tyottomyysvakuutus;
         private decimal vahennyksetYhteensa;
 
+        private decimal veroprosentti;
+        private decimal elakemaksuprosentti;
+        private decimal sotumaksuprosentti;
+        private decimal tyottomyysvakuutusprosentti;
+        private decimal jasenmaksuprosentti;
+
         public MaksuController(ILaskentaService laskentaService,
                             IHenkiloService henkiloService,
                             IVeroService veroService,
                             IElakemaksuService elakemaksuService,
                             ISotumaksuService sotumaksuService,
-                            ITyottomuusvakuutusService tyottomuusvakuutus,
-                            IJasenmaksuService jasenmaksu
+                            ITyottomyysvakuutusService tyottomyysvakuutusService,
+                            IJasenmaksuService jasenmaksuService
                             )
         {
             _laskentaService = laskentaService;
@@ -50,8 +56,8 @@ namespace Palkkasovellus.Controllers
             _veroService = veroService;
             _elakemaksuService = elakemaksuService;
             _sotumaksuService = sotumaksuService;
-            _tyottomuusvakuutusService = tyottomuusvakuutus;
-            _jasenmaksuService = jasenmaksu;
+            _tyottomyysvakuutusService = tyottomyysvakuutusService;
+            _jasenmaksuService = jasenmaksuService;
         }
 
         public IActionResult Index()
@@ -97,7 +103,13 @@ namespace Palkkasovellus.Controllers
                     Maksupaiva = model.Maksupaiva,
                     Maksukuukausi = model.Maksukuukausi,
                     Veronumero = model.Veronumero,
-
+                    Veroprosentti = model.Veroprosentti,
+                    Lisaprosentti = model.Lisaprosentti,
+                    Tuloraja = model.Tuloraja,
+                    Elakemaksuprosentti = model.Elakemaksuprosentti,
+                    Tyottomyysvakuutusprosentti = model.Tyottomyysvakuutusprosentti,
+                    Sotumaksuprosentti = model.Sotumaksuprosentti,
+                    Jasenmaksuprosentti = model.Jasenmaksuprosentti,
                     Tuntipalkka = model.Tuntipalkka,
                     Tuntimaara = model.TehdytTunnit,
                     SaannollisetTunnit = model.SaannollisetTunnit,
@@ -106,17 +118,19 @@ namespace Palkkasovellus.Controllers
 
                     SaannolPalkka = saannollinenPalkka = _laskentaService.SaannolPalkka(model.SaannollisetTunnit, model.TehdytTunnit, model.Tuntipalkka),
 
-                    Ylityopalkka = ylityopalkka = _laskentaService.Ylityotunnit(_laskentaService.YlityoTuntipalkka(model.Tuntipalkka), ylityotunnit),
+                    Ylityopalkka = ylityopalkka = _laskentaService.Ylityotunnit(_laskentaService.YlityoTuntipalkka(model.Tuntipalkka), model.Ylityotunnit),
 
                     PalkkaYhteensa = palkkaYhteensa  = _laskentaService.PalkkaYhteensa(ylityopalkka, saannollinenPalkka),
 
-                    //VeronMaara = vero = _veroService.VeronMaara(kokonaisAnsio, Tuloraja, LisaProsentti, YlityoProsentti),
+                    VeronMaara = vero = _veroService.VeronMaara(model.PalkkaYhteensa, model.Tuloraja, model.Lisaprosentti, model.Veroprosentti),
 
-                    Jasenmaksu = jasenmaksu = _henkiloService.Jasenmaksut(model.HenkiloId),
+                    Jasenmaksu = jasenmaksu = _jasenmaksuService.Jasenmaksu(model.PalkkaYhteensa, model.Jasenmaksuprosentti),
 
-                    //Tyoelakemaksu = elakemaksu = _henkiloService.ElakemaksunMaara(model.HenkiloId, kokonaisAnsio),
+                    Elakemaksu = elakemaksu = _elakemaksuService.ElakemaksunMaara(model.PalkkaYhteensa, model.Elakemaksuprosentti),
 
-                    //Sosiaaliturvamaksu = sotumaksu = _sotumaksuService.SotumaksunMaara(kokonaisAnsio, sotumaksuProsentti),
+                    Tyottomyysvakuutus = tyottomyysvakuutus = _tyottomyysvakuutusService.TyottomyysvakuutuksenMaara(model.PalkkaYhteensa, model.Tyottomyysvakuutusprosentti),
+
+                    Sosiaaliturvamaksu = sotumaksu = _sotumaksuService.SotumaksunMaara(model.PalkkaYhteensa, model.Sotumaksuprosentti),
 
                     VahennyksetYhteensa = vahennyksetYhteensa = _laskentaService.VahennyksetYhteensa(vero, sotumaksu, elakemaksu, tyottomyysvakuutus, jasenmaksu),
 
@@ -153,10 +167,11 @@ namespace Palkkasovellus.Controllers
                 YlityoTuntipalkka = _laskentaService.YlityoTuntipalkka(maksutapahtuma.Tuntipalkka),
                 SaannolPalkka = maksutapahtuma.SaannolPalkka,
                 Ylityopalkka = maksutapahtuma.Ylityopalkka,
-                Vero = maksutapahtuma.Ennakonpidatys,
+                Vero = maksutapahtuma.Vero,
                 Sotumaksu = maksutapahtuma.Sosiaaliturvamaksu,
                 Jasenmaksu = maksutapahtuma.Jasenmaksu,
                 Elakemaksu = maksutapahtuma.Elakemaksu,
+                Tyottomyysvakuutus= maksutapahtuma.Tyottomyysvakuutus,
                 PalkkaYhteensa = maksutapahtuma.PalkkaYhteensa,
                 VahennuksetYhteensa = maksutapahtuma.VahennyksetYhteensa,
                 Henkilo = maksutapahtuma.Henkilo,
@@ -191,10 +206,11 @@ namespace Palkkasovellus.Controllers
                 YlityoTuntipalkka = _laskentaService.YlityoTuntipalkka(maksutapahtuma.Tuntipalkka),
                 SaannolPalkka = maksutapahtuma.SaannolPalkka,
                 Ylityopalkka = maksutapahtuma.Ylityopalkka,
-                Vero = maksutapahtuma.Ennakonpidatys,
+                Vero = maksutapahtuma.Vero,
                 Sotumaksu = maksutapahtuma.Sosiaaliturvamaksu,
                 Jasenmaksu = maksutapahtuma.Jasenmaksu,
                 Elakemaksu = maksutapahtuma.Elakemaksu,
+                Tyottomyysvakuutus = maksutapahtuma.Tyottomyysvakuutus,
                 PalkkaYhteensa = maksutapahtuma.PalkkaYhteensa,
                 VahennuksetYhteensa = maksutapahtuma.VahennyksetYhteensa,
                 Henkilo = maksutapahtuma.Henkilo,

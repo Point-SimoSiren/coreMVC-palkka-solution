@@ -47,7 +47,7 @@ namespace Palkkasovellus.Services.Implementations
             await _context.SaveChangesAsync();
         }
 
-        public decimal Jasenmaksut(int id)
+        public decimal Jasenmaksu(int id)
         {
             throw new NotImplementedException();
         }

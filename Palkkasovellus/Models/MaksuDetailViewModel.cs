@@ -65,7 +65,7 @@ namespace Palkkasovellus.Models
         public decimal Sotumaksu { get; set; }
 
         [Display(Name = "Työttömyysvakuutusmaksu")]
-        public decimal Tyottomuusvakuutus { get; set; }
+        public decimal Tyottomyysvakuutus { get; set; }
 
         [Display(Name = "Palkka yhteensä")]
         public decimal PalkkaYhteensa { get; set; }

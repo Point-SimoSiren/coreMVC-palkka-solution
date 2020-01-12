@@ -1,6 +1,6 @@
-﻿@model  IEnumerable<MaksuIndexViewModel>
+﻿@model IEnumerable<MaksuIndexViewModel>
 
-@{ ViewBag.Title = "Maksetut palkat";}
+    @{ ViewBag.Title = "Maksetut palkat | Palkkasovellus";}
 
     <div class="row">
         <div class="col-md-12 grid-margin">
@@ -47,12 +47,12 @@
                                             <td>@item.VahennuksetYhteensa.ToString("c")</td>
                                             <td>@item.Nettopalkka.ToString("C")</td>
                                             <td>
-                                                
+
                                                 <a class="text-success" asp-action="Palkkatosite" asp-route-id="@item.Id">
                                                     <i class="fas fa-bars"></i> Palkkatositteen esikatselu
                                                 </a>
                                                 <a class="text-danger" asp-action="Palkkatosite" asp-route-id="@item.Id">
-                                                      <i class="fas fa-file-pdf"></i>  Palkkatosite Pdf
+                                                    <i class="fas fa-file-pdf"></i>  Palkkatosite Pdf
                                                 </a>
                                             </td>
                                         </tr>

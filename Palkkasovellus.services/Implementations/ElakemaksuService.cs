@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Palkkasovellus.Services.Implementations
 {
-    class ElakemaksuService : IElakemaksuService
+    public class ElakemaksuService : IElakemaksuService
     {
         private decimal elakemaksunMaara;
         public decimal ElakemaksunMaara(decimal kokonaisAnsio, decimal elakemaksuProsentti)

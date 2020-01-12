@@ -29,6 +29,18 @@ namespace Palkkasovellus.Entity
         [Column(TypeName = "decimal(18, 2)")]
         public decimal Veroprosentti { get; set; }
 
+        [Column(TypeName = "decimal(18, 2)")]
+        public decimal Elakemaksuprosentti { get; set; }
+
+        [Column(TypeName = "decimal(18, 2)")]
+        public decimal Sotumaksuprosentti { get; set; }
+
+        [Column(TypeName = "decimal(18, 2)")]
+        public decimal Tyottomyysvakuutusprosentti { get; set; }
+
+        [Column(TypeName = "decimal(18, 2)")]
+        public decimal Jasenmaksuprosentti { get; set; }
+
         [Column(TypeName = "Money")]
         public decimal Tuloraja { get; set;  }
 
@@ -54,10 +66,7 @@ namespace Palkkasovellus.Entity
         public decimal Ylityopalkka { get; set; }
 
         [Column(TypeName = "Money")]
-        public decimal Ennakonpidatys { get; set; }
-
-        [Column(TypeName = "Money")]
-        public decimal Tyoelakemaksu { get; set; }
+        public decimal Vero { get; set; }
 
         [Column(TypeName = "Money")]
         public decimal Sosiaaliturvamaksu { get; set; }
