@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "ylF8ufLn6wCluYJWX+DK6Jl0YK9/+OoZoISPlGoIVpRkKGKNDbU5O1gtNvEUbF5DBT38NvkSWYL3GUGCimpUxA==",
+  "success": true,
+  "projectFilePath": "C:\\CoreMVC\\Palkkasovellus.Entity\\Palkkasovellus.Entity.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\siren\\.nuget\\packages\\rotativa.core\\2.0.2.1\\rotativa.core.2.0.2.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Rotativa.Core 2.0.2.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Rotativa.Core",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}

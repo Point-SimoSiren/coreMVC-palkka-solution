@@ -76,8 +76,6 @@ C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch
 C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
-C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
-C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll
 C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Razor\Views\Maksu\Create.cshtml.g.cs
 C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Razor\Views\Maksu\Detail.cshtml.g.cs
 C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Razor\Views\Maksu\Index.cshtml.g.cs
@@ -85,3 +83,5 @@ C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Razor\Views\Maksu\Palkkatosite
 C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Palkkasovellus.MvcApplicationPartsAssemblyInfo.cs
 C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Palkkasovellus.MvcApplicationPartsAssemblyInfo.cache
 C:\CoreMVC\Palkkasovellus\bin\Debug\netcoreapp3.1\Rotativa.Core.dll
+C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Palkkasovellus.csproj.CoreCompileInputs.cache
+C:\CoreMVC\Palkkasovellus\obj\Debug\netcoreapp3.1\Palkkasovellus.genruntimeconfig.cache

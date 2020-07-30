@@ -11,3 +11,5 @@ C:\CoreMVC\Palkkasovellus.Persistence\bin\Debug\netcoreapp3.1\Palkkasovellus.Ent
 C:\CoreMVC\Palkkasovellus.Persistence\obj\Debug\netcoreapp3.1\Palkkasovellus.Persistence.csproj.CopyComplete
 C:\CoreMVC\Palkkasovellus.Persistence\bin\Debug\netcoreapp3.1\Palkkasovellus.Persistence.runtimeconfig.json
 C:\CoreMVC\Palkkasovellus.Persistence\bin\Debug\netcoreapp3.1\Palkkasovellus.Persistence.runtimeconfig.dev.json
+C:\CoreMVC\Palkkasovellus.Persistence\obj\Debug\netcoreapp3.1\Palkkasovellus.Persistence.csproj.CoreCompileInputs.cache
+C:\CoreMVC\Palkkasovellus.Persistence\obj\Debug\netcoreapp3.1\Palkkasovellus.Persistence.genruntimeconfig.cache

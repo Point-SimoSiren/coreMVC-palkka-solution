@@ -11,3 +11,4 @@ C:\CoreMVC\Palkkasovellus.services\bin\Debug\netcoreapp3.1\Palkkasovellus.Persis
 C:\CoreMVC\Palkkasovellus.services\bin\Debug\netcoreapp3.1\Palkkasovellus.Entity.pdb
 C:\CoreMVC\Palkkasovellus.services\bin\Debug\netcoreapp3.1\Palkkasovellus.Persistence.pdb
 C:\CoreMVC\Palkkasovellus.services\obj\Debug\netcoreapp3.1\Palkkasovellus.Services.csproj.CopyComplete
+C:\CoreMVC\Palkkasovellus.services\obj\Debug\netcoreapp3.1\Palkkasovellus.Services.csproj.CoreCompileInputs.cache
